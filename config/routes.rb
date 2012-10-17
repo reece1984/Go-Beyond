@@ -1,4 +1,6 @@
 Gobeyond::Application.routes.draw do
+  resources :challenges
+
   resources :users
 
   # The priority is based upon order of creation:
