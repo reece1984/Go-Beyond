@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017134315) do
+ActiveRecord::Schema.define(:version => 20121017141930) do
 
   create_table "challenges", :force => true do |t|
     t.string   "title"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(:version => 20121017134315) do
     t.integer  "contributor_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "developments", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "priority"
+    t.integer  "developer_id"
+    t.integer  "mentor_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "profiles", :force => true do |t|
@@ -39,6 +49,8 @@ ActiveRecord::Schema.define(:version => 20121017134315) do
     t.integer  "contributor_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "developer_id"
+    t.integer  "mentor_id"
   end
 
 end

@@ -1,0 +1,31 @@
+<h1>Listing developments</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Priority</th>
+    <th>Developer</th>
+    <th>Mentor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @developments.each do |development| %>
+  <tr>
+    <td><%= development.title %></td>
+    <td><%= development.description %></td>
+    <td><%= development.priority %></td>
+    <td><%= development.developer_id %></td>
+    <td><%= development.mentor_id %></td>
+    <td><%= link_to 'Show', development %></td>
+    <td><%= link_to 'Edit', edit_development_path(development) %></td>
+    <td><%= link_to 'Destroy', development, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Development', new_development_path %>

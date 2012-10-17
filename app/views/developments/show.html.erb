@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @development.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @development.description %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%= @development.priority %>
+</p>
+
+<p>
+  <b>Developer:</b>
+  <%= @development.developer_id %>
+</p>
+
+<p>
+  <b>Mentor:</b>
+  <%= @development.mentor_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_development_path(@development) %> |
+<%= link_to 'Back', developments_path %>
