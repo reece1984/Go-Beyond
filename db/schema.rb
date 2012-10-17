@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121017122516) do
+ActiveRecord::Schema.define(:version => 20121017125345) do
 
   create_table "challenges", :force => true do |t|
     t.string   "title"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(:version => 20121017122516) do
     t.integer  "duration"
     t.date     "completion_date"
     t.string   "status"
-    t.integer  "user_id"
     t.integer  "creator_id"
     t.integer  "contributor_id"
     t.datetime "created_at",      :null => false
