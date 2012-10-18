@@ -1,6 +1,8 @@
 Gobeyond::Application.routes.draw do
 
 
+  resources :recommendations
+
   resources :developments
 
   resources :challenges

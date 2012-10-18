@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
   has_many :objectives, :class_name => 'Development', :foreign_key => 'developer_id'
   has_many :mentorings, :class_name => 'Development', :foreign_key => 'mentor_id'
 
+  has_many :recommendations, :class_name => 'Recommendation', :foreign_key => 'recommender_id'
+  has_many :receivers, :class_name => 'Recommendation', :foreign_key => 'receiver_id'
+
+
   has_one :profile
 
 end
