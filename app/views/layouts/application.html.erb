@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Go Beyond | <%= yield(:title) %></title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Gobeyond" %></title>
+  
     <%= csrf_meta_tags %>
+
+<%= render 'layouts/shim' %>
+<%= render 'layouts/media' %>
+
   </head>
+
   <body>
-    <%= yield %>
+
+  <%= render 'layouts/navbar' %>
+  <div class="container">
+
+
+  <%= render 'layouts/footer' %>
+    </div> <!-- /container -->
+
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+    </div> <!-- /container -->
+
+        <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

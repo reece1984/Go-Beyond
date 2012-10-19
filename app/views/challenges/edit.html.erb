@@ -1,6 +1,6 @@
-<h1>Editing challenge</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @challenge %> |
-<%= link_to 'Back', challenges_path %>
+<%- model_class = Challenge -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
+                                   :default => "Edit #{model_class.model_name.human}") %></h1>
+</div>
+<%= render :partial => 'form' %>

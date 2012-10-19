@@ -18,6 +18,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 
+
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -48,3 +49,7 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+gem 'bootstrap-sass-rails'
+gem "font-awesome-sass-rails", "~> 2.0.0.0"
+gem 'simple_form'

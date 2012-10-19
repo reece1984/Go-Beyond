@@ -1,25 +1,10 @@
-<%= form_for(@profile) do |f| %>
-  <% if @profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
-
-      <ul>
-      <% @profile.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.text_field :role %>
-  </div>
-  <div class="field">
-    <%= f.label :expertise %><br />
-    <%= f.text_area :expertise %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+<%= simple_form_for @profile, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :role %>
+  <%= f.input :expertise %>
+  <%= f.input :user_id %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                profiles_path, :class => 'btn' %>
   </div>
 <% end %>

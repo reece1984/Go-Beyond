@@ -1,40 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Challenge -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @challenge.title %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @challenge.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @challenge.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:duration) %>:</strong></dt>
+  <dd><%= @challenge.duration %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:completion_date) %>:</strong></dt>
+  <dd><%= @challenge.completion_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
+  <dd><%= @challenge.status %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:creator_id) %>:</strong></dt>
+  <dd><%= @challenge.creator_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:contributor_id) %>:</strong></dt>
+  <dd><%= @challenge.contributor_id %></dd>
+</dl>
 
-<p>
-  <b>Description:</b>
-  <%= @challenge.description %>
-</p>
-
-<p>
-  <b>Duration:</b>
-  <%= @challenge.duration %>
-</p>
-
-<p>
-  <b>Completion date:</b>
-  <%= @challenge.completion_date %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @challenge.status %>
-</p>
-
-<p>
-  <b>Creator:</b>
-  <%= @challenge.creator_id %>
-</p>
-
-<p>
-  <b>Contributor:</b>
-  <%= @challenge.contributor_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
-<%= link_to 'Back', challenges_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              challenges_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_challenge_path(@challenge), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              challenge_path(@challenge),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
