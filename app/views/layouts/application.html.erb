@@ -27,7 +27,15 @@
       <% end %>
       <div class="content">
         <div class="row">
-    <title><%= content_for?(:title) ? yield(:title) : "Gobeyond" %></title>
+
+
+    <div class="container">
+      <div class="row">
+          <div class="span9">
+            <%= yield %>
+        </div>
+      </div><!--/row-->
+
 
   <%= render 'layouts/footer' %>
     </div> <!-- /container -->

@@ -12,13 +12,5 @@
  *= require_tree .
 
  */
-@import "twitter/bootstrap/responsive"
 
-body {padding-top: 60px; }
 
-@import "twitter/bootstrap-no-sprites";
-
-@import 'font-awesome';
-
-headingsColor:  #24006D;
-navbarBackgroundHighlight:  #4D0CCF;
