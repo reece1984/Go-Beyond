@@ -53,6 +53,9 @@ module Gobeyond
     # parameters by using an attr_accessible or attr_protected declaration.
     config.active_record.whitelist_attributes = true
 
+    #heroku told me to add this
+    config.assets.initialize_on_precompile = false
+
     # Enable the asset pipeline
     config.assets.enabled = true
 

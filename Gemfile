@@ -53,3 +53,4 @@ end
 gem 'bootstrap-sass-rails'
 gem "font-awesome-sass-rails", "~> 2.0.0.0"
 gem 'simple_form'
+gem 'devise'

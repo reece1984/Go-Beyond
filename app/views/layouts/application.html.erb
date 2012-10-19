@@ -19,7 +19,14 @@
 
   <%= render 'layouts/navbar' %>
 
-
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+          <a class="close" data-dismiss="alert" href="#">&times;</a>
+          <%= msg %>
+        </div>
+      <% end %>
+      <div class="content">
+        <div class="row">
 
 
   <%= render 'layouts/footer' %>

@@ -1,6 +1,8 @@
 class RecommendationsController < ApplicationController
   # GET /recommendations
   # GET /recommendations.json
+  before_filter :authenticate_user!, except: [:index, :show]
+
   def index
     @recommendations = Recommendation.all
 

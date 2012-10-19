@@ -1,6 +1,9 @@
 class ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.json
+
+  before_filter :authenticate_user!, except: [:index, :show]
+
   def index
     @challenges = Challenge.all
 

@@ -1,6 +1,9 @@
 class DevelopmentsController < ApplicationController
   # GET /developments
   # GET /developments.json
+
+  before_filter :authenticate_user!, except: [:index, :show]
+  
   def index
     @developments = Development.all
 
