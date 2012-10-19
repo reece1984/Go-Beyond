@@ -1,0 +1,26 @@
+//Set the correct sprite paths
+$iconSpritePath: image-path('glyphicons-halflings.png');
+$iconWhiteSpritePath: image-path('glyphicons-halflings-white.png');
+
+
+$h1Color:  #24006D;
+$headingsColor:  #24006D;
+$navbarBackgroundHighlight:  #4D0CCF;
+$navbarLinkColor: #F8F2FF;
+
+$font-family: 'FontAwesome';
+$btnDangerBackground:               #ff0000;
+
+
+
+
+@import "twitter/bootstrap-no-sprites";
+
+@import 'font-awesome';
+
+
+body {padding-top: 60px; }
+
+.navbar .brand {
+	color: #F8F2FF;
+}

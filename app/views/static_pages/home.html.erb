@@ -1,6 +1,12 @@
 <% provide(:title, "Home") %>
 
-    <h1>Go Beyond!</h1>
-    <p>
-      This is the home page for the Go Beyond App
-    </p>
+<div class="center hero-unit"> 
+	<h1>Welcome to Go Beyond</h1></br>
+	<%= image_tag("knight_head.jpg", alt: "Knight") %>
+
+    <h2>
+      Its not about the day job...
+    </h2>
+
+    <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+</div>
