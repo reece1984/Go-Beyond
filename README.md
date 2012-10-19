@@ -1,0 +1,1 @@
+# Simple app to encourage and reward teamwork.
