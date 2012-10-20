@@ -4,4 +4,5 @@ class Recommendation < ActiveRecord::Base
  belongs_to :recommender, :class_name => 'User'
  belongs_to :receiver, :class_name => 'User'
 
+ default_scope order: 'recommendations.created_at DESC'
 end

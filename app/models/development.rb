@@ -3,5 +3,5 @@ class Development < ActiveRecord::Base
 
   belongs_to :developer, :class_name => 'User'
   belongs_to :mentor, :class_name => 'User'
-
+  default_scope order: 'developments.created_at DESC'
 end
