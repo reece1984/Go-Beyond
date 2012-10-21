@@ -22,8 +22,8 @@
         <td><%= development.title %></td>
         <td><%= development.description %></td>
         <td><%= development.priority %></td>
-        <td><%= development.developer_id %></td>
-        <td><%= development.mentor_id %></td>
+        <td><%= development.developer.try :name  %></td>
+        <td><%= development.mentor.try :name %></td>
         <td><%=l development.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

@@ -17,7 +17,6 @@ class DevelopmentsController < ApplicationController
   # GET /developments/1.json
   def show
     @development = Development.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @development }
@@ -28,7 +27,7 @@ class DevelopmentsController < ApplicationController
   # GET /developments/new.json
   def new
     @development = Development.new
-
+    @development.developer = current_user
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @development }

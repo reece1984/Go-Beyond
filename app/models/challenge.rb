@@ -4,4 +4,8 @@ class Challenge < ActiveRecord::Base
   belongs_to :contributor, :class_name => 'User'
 
   default_scope order: 'challenges.created_at DESC'
+
+  def to_s
+    name
+  end
 end

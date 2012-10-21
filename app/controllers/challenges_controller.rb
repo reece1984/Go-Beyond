@@ -28,6 +28,7 @@ class ChallengesController < ApplicationController
   # GET /challenges/new.json
   def new
     @challenge = Challenge.new
+    @challenge.creator = current_user
 
     respond_to do |format|
       format.html # new.html.erb

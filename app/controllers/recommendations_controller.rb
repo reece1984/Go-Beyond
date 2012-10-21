@@ -5,7 +5,7 @@ class RecommendationsController < ApplicationController
 
   def index
     @recommendations = Recommendation.all
-
+    @recommendations.recommender = current_user
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @recommendations }

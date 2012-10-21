@@ -18,8 +18,8 @@
       <tr>
         <td><%= link_to recommendation.id, recommendation_path(recommendation) %></td>
         <td><%= recommendation.description %></td>
-        <td><%= recommendation.recommender_id %></td>
-        <td><%= recommendation.receiver_id %></td>
+        <td><%= recommendation.recommender.try :name %></td>
+        <td><%= recommendation.receiver.try :name %></td>
         <td><%=l recommendation.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
