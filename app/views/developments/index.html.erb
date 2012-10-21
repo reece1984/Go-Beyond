@@ -18,8 +18,8 @@
   <tbody>
     <% @developments.each do |development| %>
       <tr>
-        <td><%= link_to development.id, development_path(development) %></td>
-        <td><%= development.title %></td>
+        <td><%= development.id %></td>
+        <td><%= link_to development.title, development_path(development) %></td>
         <td><%= development.description %></td>
         <td><%= development.priority %></td>
         <td><%= development.developer.try :name  %></td>

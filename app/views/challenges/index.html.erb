@@ -20,8 +20,8 @@
   <tbody>
     <% @challenges.each do |challenge| %>
       <tr>
-        <td><%= link_to challenge.id, challenge_path(challenge) %></td>
-        <td><%= challenge.title %></td>
+        <td><%= challenge.id %></td>
+        <td><%= link_to challenge.title, challenge_path(challenge) %></td>
         <td><%= challenge.description %></td>
         <td><%= challenge.duration %></td>
         <td><%= challenge.completion_date %></td>
