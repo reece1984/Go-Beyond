@@ -5,6 +5,7 @@ class Challenge < ActiveRecord::Base
 
   default_scope order: 'challenges.created_at DESC'
   validates :title, :description, :presence => true
+
   def to_s
     name
   end

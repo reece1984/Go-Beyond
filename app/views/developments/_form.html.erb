@@ -1,9 +1,11 @@
 <%= simple_form_for @development, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.error_notification %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= f.input :priority %>
-  <%= f.input :mentor_id %>
+  <%= f.input :priority, collection: ["High", "Medium", "Low"], as: :radio_buttons %>
+
   <div class="form-actions">
+  	<%= f.error :base %>
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 developments_path, :class => 'btn' %>

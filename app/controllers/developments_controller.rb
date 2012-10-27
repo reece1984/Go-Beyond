@@ -37,13 +37,14 @@ class DevelopmentsController < ApplicationController
   # GET /developments/1/edit
   def edit
     @development = Development.find(params[:id])
+
   end
 
   # POST /developments
   # POST /developments.json
   def create
     @development = Development.new(params[:development])
-
+    @development.developer = current_user
     respond_to do |format|
       if @development.save
         format.html { redirect_to @development, notice: 'Development was successfully created.' }
@@ -66,6 +67,20 @@ class DevelopmentsController < ApplicationController
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
+        format.json { render json: @development.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+    def add_mentor
+    @development = Development.find(params[:id])
+    @development.mentor = current_user
+    respond_to do |format|
+      if @development.update_attributes(params[:development])
+        format.html { redirect_to @development, notice: 'Development was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: "show" }
         format.json { render json: @development.errors, status: :unprocessable_entity }
       end
     end

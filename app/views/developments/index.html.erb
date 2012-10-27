@@ -24,10 +24,15 @@
         <td><%= development.priority %></td>
         <td><%= development.developer.try :name  %></td>
         <td><%= development.mentor.try :name %></td>
-        <td><%=l development.created_at %></td>
+        <td><%=l development.created_at, :format => :short %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_development_path(development), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      development_path(development),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       development_path(development),
                       :method => :delete,

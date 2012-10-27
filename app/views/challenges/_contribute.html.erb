@@ -1,0 +1,4 @@
+<%= simple_form_for @challenge, :url => {:action => "update"}, :html => { :class => 'form-horizontal' } do |f| %>
+  <div><%= f.input :contributor_id, :as => :hidden %></div>
+  <%= f.submit "Contribute", class: "btn btn-large btn-primary" %>
+<% end %>

@@ -1,0 +1,4 @@
+<%= simple_form_for @development, :url => {:action => "update"}, :html => { :class => 'form-horizontal' } do |f| %>
+  <div><%= f.input :mentor_id, :as => :hidden, :selected => :current_user %></div>
+  <%= f.submit "Mentor", class: "btn btn-large btn-primary" %>
+<% end %>

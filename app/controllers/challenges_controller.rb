@@ -17,7 +17,7 @@ class ChallengesController < ApplicationController
   # GET /challenges/1.json
   def show
     @challenge = Challenge.find(params[:id])
-
+    @user = current_user
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @challenge }
@@ -39,13 +39,14 @@ class ChallengesController < ApplicationController
   # GET /challenges/1/edit
   def edit
     @challenge = Challenge.find(params[:id])
+
   end
 
   # POST /challenges
   # POST /challenges.json
   def create
     @challenge = Challenge.new(params[:challenge])
-
+    @challenge.creator = current_user
     respond_to do |format|
       if @challenge.save
         format.html { redirect_to @challenge, notice: 'Challenge was successfully created.' }
@@ -61,6 +62,12 @@ class ChallengesController < ApplicationController
   # PUT /challenges/1.json
   def update
     @challenge = Challenge.find(params[:id])
+    if @challenge.creator != current_user 
+    then
+    @challenge.contributor = current_user
+  end
+
+
 
     respond_to do |format|
       if @challenge.update_attributes(params[:challenge])
