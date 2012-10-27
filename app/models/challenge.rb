@@ -4,7 +4,7 @@ class Challenge < ActiveRecord::Base
   belongs_to :contributor, :class_name => 'User'
 
   default_scope order: 'challenges.created_at DESC'
-
+  validates :title, :description, :presence => true
   def to_s
     name
   end

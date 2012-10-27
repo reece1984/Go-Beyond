@@ -4,7 +4,7 @@ gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'heroku'
+
 group :development do
 	gem 'sqlite3'
 	gem 'rspec-rails'
@@ -34,7 +34,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.12.2'
+  gem 'pg'
   gem 'thin'
 end
 
